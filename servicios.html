@@ -45,6 +45,74 @@
             </ol>
         </section>
 
+        <!-- PARTE NUEVA: Tabla de horarios y asignaturas -->
+        <section id="horarios-clases">
+            <h2>Horarios y Carga Horaria por Asignatura</h2>
+            <p>A continuación se detalla la distribución de materias, turnos y estados actuales para el periodo lectivo:</p>
+
+            <!-- <table>: Define y contenedor principal de una tabla HTML -->
+            <table>
+                <!-- <caption>: Proporciona un título o descripción accesible a toda la tabla (debe ir inmediatamente después de <table>) -->
+                <caption>Cronograma de Clases y Estado Académico</caption>
+
+                <!-- <thead>: Agrupa las filas de encabezado de la tabla para estructurar los títulos de las columnas -->
+                <thead>
+                    <tr>
+                        <!-- <th>: Celda de encabezado (Table Header). El atributo scope="col" indica que el encabezado aplica para toda su columna (accesibilidad) -->
+                        <th scope="col">Asignatura</th>
+                        <th scope="col">Carrera</th>
+                        <th scope="col">Turno</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+
+                <!-- <tbody>: Agrupa el cuerpo principal con los registros o datos de la tabla -->
+                <tbody>
+                    <!-- <tr>: Define una fila (Table Row) dentro de la tabla -->
+                    <tr>
+                        <!-- <td>: Celda de datos (Table Data) con scope="row" porque esta primera columna identifica la fila -->
+                        <th scope="row">Arquitectura de Redes</th>
+                        <td>Seguridad Informática</td>
+                        <td>Mañana</td>
+                        <td>Activo</td> <!-- Estado -->
+                    </tr>
+                    <tr>
+                        <th scope="row">Programación Web Avanzada</th>
+                        <td>Desarrollo de Software</td>
+                        <td>Tarde</td>
+                        <td>Activo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Auditoría de Sistemas</th>
+                        <td>Seguridad Informática</td>
+                        <td>Noche</td>
+                        <td>Cupo Completo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Bases de NoSQL y SQL</th>
+                        <td>Desarrollo de Software</td>
+                        <td>Mañana</td>
+                        <td>Activo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Seguridad en Cloud Computing</th>
+                        <td>Especialización Redes</td>
+                        <td>Noche</td>
+                        <td>Próximamente</td>
+                    </tr>
+                </tbody>
+
+                <!-- <tfoot>: Agrupa la fila de pie de tabla, información de cierre -->
+                <tfoot>
+                    <tr>
+                        <!-- colspan="3": Atributo que permite combinar 3 celdas horizontales en una sola para ocupar más espacio -->
+                        <td colspan="3"><strong>Total de asignaturas agregadas en la nueva malla:</strong></td>
+                        <td><strong>5 asignaturas</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
         <section id="recursos">
             <h2>Recursos Externos</h2>
             <p>Para consultar el catálogo nacional de titulaciones oficiales, visita el sitio del <a href="https://www.mec.gov.py/cms/" target="_blank">Ministerio de Educación</a>.</p>
