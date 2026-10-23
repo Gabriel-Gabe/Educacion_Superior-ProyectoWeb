@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripción - Instituto Tecnológico Superior</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>Instituto Tecnológico Superior</h1>
+        </div>
+        <!-- Menú de navegación actualizado con el nuevo enlace al formulario, eso lo actualizamos en las demás páginas también -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="inscripcion.html">Inscripción</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="seccion-inscripcion">
+            <h2>Formulario de Inscripción Académica</h2>
+            <p>Complete los siguientes datos para solicitar su preinscripción a las carreras del período lectivo 2026.</p>
+
+            <!-- <form>: Contenedor del formulario. action="#" y method="POST" para simular el envío -->
+            <form action="#" method="POST">
+                
+                <!-- Primer campo Texto (Nombre) -->
+                <div>
+                    <!-- <label> Etiqueta descriptiva mediante el atributo 'for' al 'id' del input -->
+                    <label for="nombre">Nombre completo:</label><br>
+                    <!-- pattern="[A-Za-zÁ-Úá-ú ]+" agregamos este apartado para que el usuario solo pueda ingresar letras (incluyendo tildes) y espacios -->
+                    <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="50" placeholder="Ej: Juan Pérez" pattern="[A-Za-zÁ-Úá-ú ]+" title="Solo se permiten letras y espacios" autocomplete="name" autofocus>
+</div>
+                </div>
+                <br>
+
+                <!-- Campo 2: Email -->
+                <div>
+                    <label for="email">Correo electrónico:</label><br>
+                    <!-- <input type="email">: Valida automáticamente el formato de correo -->
+                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" autocomplete="email">
+                </div>
+                <br>
+
+                <!-- Campo 3: Teléfono -->
+                <div>
+                    <label for="telefono">Número telefónico:</label><br>
+                    <!-- value="+595 " Aqui hicimos que al comienzo se agregue automaticamente el número telefonico empezando por +595 como prueba -->
+                    <!-- pattern="^\+595[0-9]{9}$" esto obliga al usuario a que los valores ingresados que empiecen con +595 seguido exactamente de 9 números -->
+                    <input type="tel" id="telefono" name="telefono" value="+595" required pattern="^\+595[0-9]{9}$" placeholder="+595900123456" title="Debe comenzar con +595 seguido de 9 números" autocomplete="tel">
+                </div>
+                <br>
+
+                <!-- Campo 4: Fecha -->
+                <div>
+                    <label for="fecha_nac">Fecha de nacimiento:</label><br>
+                    <!-- <input type="date">: Selector interactivo de fechas -->
+                    <input type="date" id="fecha_nac" name="fecha_nac" required max="2008-12-31">
+                </div>
+                <br>
+
+                <!-- Campo 5: Selección (Select) -->
+                <div>
+                    <label for="carrera">Carrera de interés:</label><br>
+                    <select id="carrera" name="carrera" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="software">Tecnicatura en Desarrollo de Software</option>
+                        <option value="ciberseguridad">Licenciatura en Seguridad Informática</option>
+                        <option value="redes">Especialización en Redes y Sistemas Distribuidos</option>
+                    </select>
+                </div>
+                <br>
+
+                <!-- Campo 6: Textarea, Comentarios adicionales -->
+                <div>
+                    <label for="comentarios">Comentarios o consultas adicionales:</label><br>
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escriba aquí sus dudas..."></textarea>
+                </div>
+                <br>
+
+                <!-- Botones de envío y reinicio del formulario -->
+                <div>
+                    <!-- <button type="submit"> o <input type="submit">: Envía los datos -->
+                    <button type="submit">Enviar Inscripción</button>
+                    <!-- <button type="reset">: Restablece el formulario a sus valores iniciales -->
+                    <button type="reset">Limpiar Campos</button>
+                </div>
+
+            </form>
+        </section>
+
+        <aside>
+            <h3>Requisitos de Admisión</h3>
+            <p>Recuerde adjuntar su cédula de identidad y certificado de estudios al momento de presentarse en secretaría.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>2026 Instituto Tecnológico Superior. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
