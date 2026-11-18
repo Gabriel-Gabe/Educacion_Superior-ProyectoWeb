@@ -150,7 +150,7 @@ header nav ul {
 header nav ul li a {
     color: #17216b;
     font-size: 0.88rem;
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -176,6 +176,7 @@ header nav ul li a {
     border: 1px solid #63aaf3;
     border-radius: 999px;
     font-size: 0.82rem;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -247,6 +248,7 @@ header nav a:hover {
     background-color: #63aaf3;
     color: #ffffff;
     font-size: 0.9rem;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -452,6 +454,88 @@ header nav a:hover {
     font-size: clamp(1.8rem, 3.2vw, 1.8rem);
     font-weight: 400;
     line-height: 1.28;
+}
+
+/* Secciones académicas de la página Servicios */
+.servicios-seccion {
+    margin-top: 32px;
+}
+
+.servicios-seccion > p {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    color: #5964a3;
+    text-align: center;
+}
+
+.servicios-horarios > p {
+    margin-bottom: 26px;
+}
+
+.servicios-filtros {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) minmax(140px, 0.75fr) minmax(180px, 1fr) auto;
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 28px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #f3f8ff;
+}
+
+.servicios-filtros > div {
+    margin: 0;
+}
+
+.servicios-filtros label {
+    color: #17216b;
+    font-size: 0.85rem;
+}
+
+.servicios-filtros select,
+.servicios-filtros input {
+    width: 100%;
+    max-width: none;
+    margin-top: 7px;
+    border: 1px solid #b9d8f5;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.servicios-filtros-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.servicios-filtros-acciones button {
+    white-space: nowrap;
+}
+
+.servicios-aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 32px;
+    padding: 42px clamp(24px, 6vw, 72px);
+    border: 0;
+    border-radius: 48px 48px 0 0;
+    background-color: #15124f;
+    color: #ffffff;
+}
+
+.servicios-aside h3 {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 400;
+}
+
+.servicios-aside p {
+    margin: 0;
+    color: #ffffff;
 }
 
 /* Tarjetas visuales para las novedades */
@@ -973,6 +1057,89 @@ legend {
    ESTILO UTILIZADO PARA LA INSCRIPCIÓN FORMULARIO
    ========================================================== */
 
+.inscripcion-pagina {
+    max-width: 1280px;
+    padding-top: 48px;
+    padding-bottom: 64px;
+}
+
+.inscripcion-pagina .grid-contenido {
+    grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.85fr);
+    gap: 36px;
+    align-items: start;
+}
+
+.inscripcion-formulario {
+    padding: clamp(26px, 4vw, 48px);
+    border-radius: 28px;
+    background-color: #eef7ff;
+    box-shadow: 0 12px 30px rgba(67, 91, 150, 0.1);
+}
+
+.inscripcion-formulario > h2 {
+    margin-bottom: 14px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+}
+
+.inscripcion-formulario > p {
+    margin-bottom: 28px;
+    color: #5964a3;
+}
+
+.inscripcion-formulario form label {
+    color: #17216b;
+    font-weight: 600;
+}
+
+.inscripcion-formulario form input:not([type="checkbox"]):not([type="radio"]),
+.inscripcion-formulario form select,
+.inscripcion-formulario form textarea {
+    width: 100%;
+    max-width: none;
+    margin-top: 7px;
+    border: 1px solid #b9d8f5;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.inscripcion-formulario form textarea {
+    resize: vertical;
+}
+
+.inscripcion-formulario form button {
+    margin: 4px 6px 4px 0;
+}
+
+.inscripcion-aside {
+    position: sticky;
+    top: 100px;
+    padding: 34px 30px;
+    border: 0;
+    border-radius: 28px;
+    background-color: #15124f;
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(67, 91, 150, 0.1);
+}
+
+.inscripcion-aside h3 {
+    margin-bottom: 18px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.inscripcion-aside p {
+    color: #ffffff;
+}
+
+.inscripcion-aside p:last-child {
+    margin-bottom: 0;
+}
+
 /* Indicador de progreso */
 .pasos {
     counter-reset: paso;
@@ -1398,5 +1565,28 @@ footer {
 
     .consejo-imagen img {
         min-height: 200px;
+    }
+
+    .servicios-filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .servicios-filtros-acciones {
+        justify-content: flex-start;
+    }
+
+    .servicios-aside {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        border-radius: 32px 32px 0 0;
+    }
+
+    .inscripcion-pagina {
+        padding-top: 32px;
+    }
+
+    .inscripcion-aside {
+        position: static;
     }
 }
