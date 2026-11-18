@@ -9,84 +9,113 @@
 <body>
 
     <header>
-        <div>
-            <h1>Instituto Tecnológico Superior</h1>
-            <p><span>Formando profesionales para el futuro digital</span></p>
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="inscripcion.html">Inscripción</a></li>
             </ul>
         </nav>
+
+        <div class="encabezado-institucional">
+            <h1>Instituto Tecnológico Superior</h1>
+            <!-- <p><span>Formando profesionales para el futuro digital</span></p> -->
+        </div>
+
+        <div class="acciones-header">
+            <ul>
+                <li><a href="inscripcion.html">Inscripción</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </div>
     </header>
 
-    <main class="contenedor-principal">
-        <div class="grid-contenido">
-            <div>
-                <section id="bienvenida" class="tarjeta-seccion">
-                    <h2>Bienvenido a nuestra institución</h2>
-                    <p>Ofrecemos educación de calidad orientada a la tecnología, la investigación y la innovación.</p>
-                    <img src="imagenes/estudiantes.jpg" alt="Estudiantes en campus" width="400">
-                    <p>Puedes consultar nuestra <a href="#novedades">sección de novedades</a> para más información rápida.</p>
-                </section>
+    <main>
+        <section class="hero-inicio">
+            <div class="hero-contenido">
+                <h2>Crea tu futuro en el Instituto Tecnológico Superior</h2>
+                <p>Formamos profesionales preparados para transformar el mundo digital mediante la educación, la innovación y el aprendizaje continuo.</p>
+                <a class="hero-boton" href="contacto.html">Solicitar información</a>
+            </div>
+            <div class="hero-imagen">
+                <img src="imagenes/estudiantes.jpg" alt="Estudiantes aprendiendo en el instituto">
+            </div>
+        </section>
 
-                <section id="novedades" class="tarjeta-seccion">
+        <section class="seccion-presentacion">
+            <p class="seccion-etiqueta">QUIÉNES SOMOS</p>
+            <h2>Somos una institución educativa tecnológica que pone a disposición de los centros educativos y el profesorado, un <span>universo de contenidos de calidad</span> que contribuyen a mejorar el aprendizaje del alumnado.</h2>
+            <a class="presentacion-boton" href="nosotros.html">Conócenos</a>
+        </section>
+
+        <div class="contenedor-principal inicio-contenedor">
+            <div class="grid-contenido">
+                <section id="novedades" class="novedades-seccion">
                     <h2>Novedades Recientes</h2>
-                    <article>
-                        <h3>Inicio del Período Académico 2026</h3>
-                        <p>Las inscripciones para la carrera de Ciberseguridad e Informática ya se encuentran abiertas.</p>
-                    </article>
-                    <article>
-                        <h3>Acreditación Institucional</h3>
-                        <p>Nuestra institución ha obtenido la acreditación de calidad educativa por parte del Ministerio.</p>
-                    </article>
+                    <div class="novedades-tarjetas">
+                        <article class="novedad-card novedad-periodo">
+                            <div class="novedad-imagen">
+                                <img src="imagenes/estudiantes2.jpg" alt="Estudiantes iniciando el período académico">
+                            </div>
+                            <div class="novedad-contenido">
+                                <h3>Inicio del Período Académico 2026</h3>
+                                <p>Las inscripciones para la carrera de Ciberseguridad e Informática ya se encuentran abiertas.</p>
+                            </div>
+                        </article>
+                        <article class="novedad-card novedad-acreditacion">
+                            <div class="novedad-imagen">
+                                <img src="imagenes/acreditacion.png" alt="Estudiantes en una institución educativa">
+                            </div>
+                            <div class="novedad-contenido">
+                                <h3>Acreditación Institucional</h3>
+                                <p>Nuestra institución ha obtenido la acreditación de calidad educativa por parte del Ministerio.</p>
+                            </div>
+                        </article>
+                    </div>
                 </section>
 
-                <!-- TABLA 1: Estadísticas de la Institución -->
-                <section class="tarjeta-seccion">
-                    <h2>Logros Institucionales</h2>
+                <section class="logros-institucionales">
+
+                    <h2>Logros institucionales</h2>
+                    <p class="logros-descripcion">Resumen de métricas institucionales del año</p>
                     <div class="tabla-contenedor">
                         <table>
                             <caption>Resumen de métricas institucionales del año</caption>
                             <thead>
                                 <tr>
                                     <th scope="col">Indicador</th>
-                                    <th scope="col">Cantidad Actual</th>
-                                    <th scope="col">Meta Anual</th>
+                                    <th scope="col">Cantidad actual</th>
+                                    <th scope="col">Meta anual</th>
                                     <th scope="col">Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">Estudiantes Matriculados</th>
+                                    <th scope="row">Estudiantes matriculados</th>
                                     <td>1,450</td>
                                     <td>1,500</td>
-                                    <td>En Progreso</td>
+                                    <td>En progreso</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Carreras Habilitadas</th>
+                                    <th scope="row">Carreras habilitadas</th>
                                     <td>8</td>
                                     <td>10</td>
                                     <td>Estable</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Convenios Empresariales</th>
+                                    <th scope="row">Convenios empresariales</th>
                                     <td>24</td>
                                     <td>20</td>
                                     <td>Superado</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Laboratorios de Redes</th>
+                                    <th scope="row">Laboratorios de redes</th>
                                     <td>5</td>
                                     <td>5</td>
                                     <td>Completado</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Investigadores Activos</th>
+                                    <th scope="row">Investigadores activos</th>
                                     <td>32</td>
                                     <td>30</td>
                                     <td>Superado</td>
@@ -94,24 +123,49 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="3"><strong>Evaluación General de Crecimiento:</strong></td>
+                                    <td colspan="3"><strong>Evaluación general de crecimiento:</strong></td>
                                     <td><strong>Favorable</strong></td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
                 </section>
+
             </div>
 
-            <aside class="tarjeta-seccion">
+            <!-- <aside class="tarjeta-seccion">
                 <h3>Aviso Importante</h3>
                 <p>El proceso de solicitud de becas estará abierto hasta el próximo viernes. Dirígete a la sección de servicios.</p>
-            </aside>
+            </aside> -->
         </div>
+
+
     </main>
 
     <footer>
-        <p>2026 Instituto Tecnológico Superior. Todos los derechos reservados.</p>
+        <div class="footer-contenido">
+            <div class="footer-marca">
+                <strong>Instituto Tecnológico Superior</strong>
+                <p>Formando profesionales para el futuro digital.</p>
+            </div>
+
+            <nav class="footer-enlaces" aria-label="Enlaces del pie de página">
+                <!-- posible nav -->
+            </nav>
+
+            <div class="footer-redes">
+                <p>Síguenos</p>
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">ig</a>
+                <a href="#" aria-label="YouTube">▶</a>
+            </div>
+        </div>
+
+        <div class="footer-inferior">
+            <span>Condiciones de uso</span>
+            <span>Política de privacidad</span>
+            <span>© 2026 Instituto Tecnológico Superior</span>
+        </div>
     </footer>
 
 </body>
