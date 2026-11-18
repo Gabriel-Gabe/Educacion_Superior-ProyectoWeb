@@ -33,6 +33,51 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.consejo-directivo {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+    align-items: center;
+    min-height: 130px;
+    width: 100vw;
+    margin: 0 0 0 calc(50% - 50vw);
+    overflow: hidden;
+    padding: 0;
+    border-radius: 0;
+    background-color: #17216b;
+}
+
+.consejo-contenido {
+    padding: 32px clamp(24px, 6vw, 72px);
+}
+
+.consejo-contenido h3 {
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+}
+
+.consejo-contenido p {
+    max-width: 480%;
+    margin: 0;
+    color: #ffffff;
+}
+
+.consejo-imagen {
+    align-self: stretch;
+    min-height: 230px;
+    clip-path: ellipse(180% 100% at 100% 50%);
+}
+
+.consejo-imagen img {
+    display: block;
+    width: 90%;
+    height: 100%;
+    min-height: 230px;
+    object-fit: cover;
+}
+
 /* 5. Selector descendiente */
 header nav ul li a {
     color: #ffffff;
@@ -223,6 +268,127 @@ header nav a:hover {
     object-fit: cover;
 }
 
+/* Presentación institucional de la página Nosotros */
+.nosotros-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    min-height: 430px;
+    overflow: hidden;
+    background-color: #15124f;
+}
+
+.nosotros-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px clamp(24px, 10vw, 156px);
+    color: #ffffff;
+}
+
+.nosotros-contenido .seccion-etiqueta {
+    margin-bottom: 18px;
+    color: #b9d8f5;
+}
+
+.nosotros-contenido h2 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.nosotros-contenido > p:last-child {
+    max-width: 470px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.nosotros-imagen {
+    min-height: 430px;
+    clip-path: ellipse(120% 150% at 120% 0%);
+}
+
+.nosotros-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+}
+
+/* Composición de la historia institucional */
+.historia-institucional {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+    gap: 0;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 0;
+    background-color: #f3f8ff;
+}
+
+.historia-imagen {
+    min-height: 520px;
+}
+
+.historia-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+.historia-contenido {
+    min-width: 0;
+    padding: 52px 42px;
+}
+
+.historia-contenido h2 {
+    margin: 0 0 28px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+}
+
+.historia-contenido .tabla-contenedor {
+    overflow-x: auto;
+    background-color: transparent;
+}
+
+.historia-institucional .historia-contenido table {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    table-layout: fixed;
+}
+
+.historia-institucional .historia-contenido th,
+.historia-institucional .historia-contenido td {
+    overflow-wrap: anywhere;
+}
+
+.historia-institucional .historia-contenido th:first-child,
+.historia-institucional .historia-contenido td:first-child {
+    width: 13%;
+}
+
+.historia-institucional .historia-contenido th:nth-child(2),
+.historia-institucional .historia-contenido td:nth-child(2) {
+    width: 55%;
+}
+
+.historia-institucional .historia-contenido th:last-child,
+.historia-institucional .historia-contenido td:last-child {
+    width: 32%;
+}
+
 /* Presentación institucional debajo del hero */
 .seccion-presentacion {
     padding: 82px 24px 96px;
@@ -263,6 +429,29 @@ header nav a:hover {
 
 .presentacion-boton:hover {
     background-color: #eef7ff;
+}
+
+/* Presentación de la propuesta educativa */
+.oferta-presentacion {
+    padding: 82px 24px 96px;
+    text-align: center;
+}
+
+.oferta-presentacion .seccion-etiqueta {
+    margin: 0 0 22px;
+    color: #17216b;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.oferta-presentacion h2 {
+    max-width: 860px;
+    margin: 0 auto;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3.2vw, 1.8rem);
+    font-weight: 400;
+    line-height: 1.28;
 }
 
 /* Tarjetas visuales para las novedades */
@@ -336,7 +525,8 @@ header nav a:hover {
 }
 
 /* Panel de logros con apariencia de sección destacada */
-.logros-institucionales {
+.logros-institucionales,
+.tabla-institucional {
     margin-top: 32px;
     padding: 64px 32px 72px;
     border-radius: 72px 72px 96px 96px;
@@ -344,7 +534,8 @@ header nav a:hover {
     text-align: center;
 }
 
-.logros-institucionales h2 {
+.logros-institucionales h2,
+.tabla-institucional h2 {
     margin: 0 0 10px;
     color: #17216b;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -358,12 +549,14 @@ header nav a:hover {
     font-size: 0.95rem;
 }
 
-.logros-institucionales .tabla-contenedor {
+.logros-institucionales .tabla-contenedor,
+.tabla-institucional .tabla-contenedor {
     overflow-x: auto;
     padding: 0 4px 8px;
 }
 
-.logros-institucionales table {
+.logros-institucionales table,
+.tabla-institucional table {
     min-width: 700px;
     margin: 0 auto;
     overflow: hidden;
@@ -372,7 +565,8 @@ header nav a:hover {
     box-shadow: 0 14px 30px rgba(67, 91, 150, 0.1);
 }
 
-.logros-institucionales caption {
+.logros-institucionales caption,
+.tabla-institucional caption {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -382,7 +576,9 @@ header nav a:hover {
 }
 
 .logros-institucionales th,
-.logros-institucionales td {
+.logros-institucionales td,
+.tabla-institucional th,
+.tabla-institucional td {
     border: 0;
     border-bottom: 1px solid #edf2fb;
     padding: 16px 18px;
@@ -390,24 +586,30 @@ header nav a:hover {
     text-align: left;
 }
 
-.logros-institucionales thead th {
+.logros-institucionales thead th,
+.tabla-institucional thead th {
     background-color: #e8f2ff;
     color: #17216b;
     font-size: 0.82rem;
     text-transform: uppercase;
 }
 
-.logros-institucionales tbody th {
+.logros-institucionales tbody th,
+.tabla-institucional tbody th {
     font-weight: 600;
 }
 
 .logros-institucionales tbody tr:last-child th,
 .logros-institucionales tbody tr:last-child td,
-.logros-institucionales tfoot td {
+.logros-institucionales tfoot td,
+.tabla-institucional tbody tr:last-child th,
+.tabla-institucional tbody tr:last-child td,
+.tabla-institucional tfoot td {
     border-bottom: 0;
 }
 
-.logros-institucionales tfoot td {
+.logros-institucionales tfoot td,
+.tabla-institucional tfoot td {
     background-color: #f8fbff;
     font-size: 0.9rem;
 }
@@ -419,6 +621,112 @@ header nav a:hover {
 
 .inicio-contenedor .grid-contenido {
     grid-template-columns: 1fr;
+}
+
+.contacto-hero {
+    display: grid;
+    min-height: 390px;
+    place-items: center;
+    background-image: linear-gradient(rgba(243, 248, 255, 0.72), rgba(243, 248, 255, 0.72)), url('../imagenes/imagen3.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.contacto-hero h1 {
+    margin: 0;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 400;
+}
+
+.contacto-hero p {
+    margin: 18px 0 0;
+    color: #5964a3;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.45em;
+}
+
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.7fr);
+    gap: clamp(40px, 8vw, 120px);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 82px 24px 96px;
+}
+
+.contacto-pagina .tarjeta-seccion {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.contacto-formulario {
+    order: 1;
+}
+
+.contacto-detalles {
+    order: 2;
+}
+
+.contacto-formulario h2,
+.contacto-detalles h2 {
+    margin-bottom: 28px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.contacto-detalles {
+    padding: 32px;
+    border-radius: 16px;
+    background-color: #f3f8ff;
+    color: #303b83;
+}
+
+.contacto-detalles h2 {
+    color: #17216b;
+}
+
+.contacto-pagina form {
+    max-width: none;
+    margin: 0;
+}
+
+.contacto-pagina form div {
+    margin-bottom: 18px;
+}
+
+.contacto-pagina form br {
+    display: none;
+}
+
+.contacto-pagina form input,
+.contacto-pagina form select,
+.contacto-pagina form textarea {
+    width: 100%;
+    max-width: none;
+    margin-top: 7px;
+    border: 1px solid #b9d8f5;
+    border-radius: 6px;
+    background-color: #f3f8ff;
+}
+
+.contacto-pagina form textarea {
+    resize: vertical;
+}
+
+.contacto-formulario-acciones {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
 }
 
 /* ==========================================================
@@ -1028,5 +1336,67 @@ footer {
     .footer-redes a {
         margin-right: 6px;
         margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacto-hero {
+        min-height: 280px;
+    }
+
+    .contacto-hero p {
+        letter-spacing: 0.25em;
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+        gap: 52px;
+        padding: 56px 24px 72px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .nosotros-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-contenido {
+        padding: 52px 24px;
+    }
+
+    .nosotros-imagen {
+        min-height: 280px;
+        clip-path: none;
+    }
+
+    .nosotros-imagen img {
+        min-height: 280px;
+    }
+
+    .historia-institucional {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-imagen,
+    .historia-imagen img {
+        min-height: 280px;
+    }
+
+    .historia-contenido {
+        padding: 36px 24px;
+    }
+
+    .consejo-directivo {
+        grid-template-columns: 1fr;
+    }
+
+    .consejo-imagen {
+        min-height: 200px;
+        clip-path: none;
+    }
+
+    .consejo-imagen img {
+        min-height: 200px;
     }
 }
