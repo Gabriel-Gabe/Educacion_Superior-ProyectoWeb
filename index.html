@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Instituto Tecnológico Superior - Inicio</title>
+    <!-- Vinculación de la hoja de estilos externa -->
+    <link rel="stylesheet" href="css/estiloss.css">
 </head>
 <body>
 
@@ -17,37 +19,95 @@
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="inscripcion.html">Inscripción</a></li> <!-- Nuevo enlace agregado -->
+                <li><a href="inscripcion.html">Inscripción</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="bienvenida">
-            <h2>Bienvenido a nuestra institución</h2>
-            <p>Ofrecemos educación de calidad orientada a la tecnología, la investigación y la innovación.</p>
-            <img src="imagenes/estudiantes.jpg" alt="Estudiantes" width="400">
-            <p>Puedes consultar nuestra <a href="#novedades">sección de novedades</a> para más información rápida.</p>
-        </section>
+    <main class="contenedor-principal">
+        <div class="grid-contenido">
+            <div>
+                <section id="bienvenida" class="tarjeta-seccion">
+                    <h2>Bienvenido a nuestra institución</h2>
+                    <p>Ofrecemos educación de calidad orientada a la tecnología, la investigación y la innovación.</p>
+                    <img src="imagenes/estudiantes.jpg" alt="Estudiantes en campus" width="400">
+                    <p>Puedes consultar nuestra <a href="#novedades">sección de novedades</a> para más información rápida.</p>
+                </section>
 
-        <section id="novedades">
-            <h2>Novedades Recientes</h2>
+                <section id="novedades" class="tarjeta-seccion">
+                    <h2>Novedades Recientes</h2>
+                    <article>
+                        <h3>Inicio del Período Académico 2026</h3>
+                        <p>Las inscripciones para la carrera de Ciberseguridad e Informática ya se encuentran abiertas.</p>
+                    </article>
+                    <article>
+                        <h3>Acreditación Institucional</h3>
+                        <p>Nuestra institución ha obtenido la acreditación de calidad educativa por parte del Ministerio.</p>
+                    </article>
+                </section>
 
-            <article>
-                <h3>Inicio del Período Académico 2026</h3>
-                <p>Las inscripciones para la carrera de Ciberseguridad e Informática ya se encuentran abiertas. Revisa los requisitos de ingreso en la sección correspondiente.</p>
-            </article>
+                <!-- TABLA 1: Estadísticas de la Institución -->
+                <section class="tarjeta-seccion">
+                    <h2>Logros Institucionales</h2>
+                    <div class="tabla-contenedor">
+                        <table>
+                            <caption>Resumen de métricas institucionales del año</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Indicador</th>
+                                    <th scope="col">Cantidad Actual</th>
+                                    <th scope="col">Meta Anual</th>
+                                    <th scope="col">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Estudiantes Matriculados</th>
+                                    <td>1,450</td>
+                                    <td>1,500</td>
+                                    <td>En Progreso</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Carreras Habilitadas</th>
+                                    <td>8</td>
+                                    <td>10</td>
+                                    <td>Estable</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Convenios Empresariales</th>
+                                    <td>24</td>
+                                    <td>20</td>
+                                    <td>Superado</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Laboratorios de Redes</th>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td>Completado</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Investigadores Activos</th>
+                                    <td>32</td>
+                                    <td>30</td>
+                                    <td>Superado</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3"><strong>Evaluación General de Crecimiento:</strong></td>
+                                    <td><strong>Favorable</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+            </div>
 
-            <article>
-                <h3>Acreditación Institucional</h3>
-                <p>Nuestra institución ha obtenido la acreditación de calidad educativa por parte del Ministerio de Educación.</p>
-            </article>
-        </section>
-
-        <aside>
-            <h3>Aviso Importante</h3>
-            <p>El proceso de solicitud de becas estará abierto hasta el próximo viernes. Dirígete a la sección de servicios para más detalles.</p>
-        </aside>
+            <aside class="tarjeta-seccion">
+                <h3>Aviso Importante</h3>
+                <p>El proceso de solicitud de becas estará abierto hasta el próximo viernes. Dirígete a la sección de servicios.</p>
+            </aside>
+        </div>
     </main>
 
     <footer>

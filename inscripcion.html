@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inscripción - Instituto Tecnológico Superior</title>
+    <link rel="stylesheet" href="css/estiloss.css">
+    <script src="js/script_inscripcion.js" defer></script>
 </head>
 <body>
 
@@ -10,7 +13,6 @@
         <div>
             <h1>Instituto Tecnológico Superior</h1>
         </div>
-        <!-- Menú de navegación actualizado con el nuevo enlace al formulario, eso lo actualizamos en las demás páginas también -->
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -22,83 +24,182 @@
         </nav>
     </header>
 
-    <main>
-        <section id="seccion-inscripcion">
-            <h2>Formulario de Inscripción Académica</h2>
-            <p>Complete los siguientes datos para solicitar su preinscripción a las carreras del período lectivo 2026.</p>
+    <main class="contenedor-principal">
+        <div class="grid-contenido">
+            <div>
+                <!-- FORMULARIO DE INSCRIPCIÓN EN 3 PASOS -->
+                <section id="seccion-inscripcion" class="tarjeta-seccion">
+                    <h2>Formulario de Inscripción Académica</h2>
+                    <p>Complete la preinscripción en tres pasos: sus datos, las asignaturas que desea cursar y una revisión final antes de enviar.</p>
 
-            <!-- <form>: Contenedor del formulario. action="#" y method="POST" para simular el envío -->
-            <form action="#" method="POST">
-                
-                <!-- Primer campo Texto (Nombre) -->
-                <div>
-                    <!-- <label> Etiqueta descriptiva mediante el atributo 'for' al 'id' del input -->
-                    <label for="nombre">Nombre completo:</label><br>
-                    <!-- pattern="[A-Za-zÁ-Úá-ú ]+" agregamos este apartado para que el usuario solo pueda ingresar letras (incluyendo tildes) y espacios -->
-                    <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="50" placeholder="Ej: Juan Pérez" pattern="[A-Za-zÁ-Úá-ú ]+" title="Solo se permiten letras y espacios" autocomplete="name" autofocus>
-</div>
-                </div>
-                <br>
+                    <ol class="pasos" aria-label="Progreso de la inscripción">
+                        <li id="indicador-paso-1" class="paso activo" aria-current="step">Datos personales</li>
+                        <li id="indicador-paso-2" class="paso">Asignaturas</li>
+                        <li id="indicador-paso-3" class="paso">Revisión</li>
+                    </ol>
 
-                <!-- Campo 2: Email -->
-                <div>
-                    <label for="email">Correo electrónico:</label><br>
-                    <!-- <input type="email">: Valida automáticamente el formato de correo -->
-                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" autocomplete="email">
-                </div>
-                <br>
+                    <!-- PASO 1: Datos personales -->
+                    <div id="paso-1">
+                        <h3 tabindex="-1">Paso 1: Datos personales</h3>
+                        <form id="form-inscripcion" action="#" method="POST">
+                            <div>
+                                <label for="nombre">Nombre completo:</label><br>
+                                <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="50" placeholder="Ej: Juan Pérez" pattern="[A-Za-zÁ-Úá-ú ]+" title="Solo se permiten letras y espacios" autocomplete="name" autofocus>
+                            </div>
 
-                <!-- Campo 3: Teléfono -->
-                <div>
-                    <label for="telefono">Número telefónico:</label><br>
-                    <!-- value="+595 " Aqui hicimos que al comienzo se agregue automaticamente el número telefonico empezando por +595 como prueba -->
-                    <!-- pattern="^\+595[0-9]{9}$" esto obliga al usuario a que los valores ingresados que empiecen con +595 seguido exactamente de 9 números -->
-                    <input type="tel" id="telefono" name="telefono" value="+595" required pattern="^\+595[0-9]{9}$" placeholder="+595900123456" title="Debe comenzar con +595 seguido de 9 números" autocomplete="tel">
-                </div>
-                <br>
+                            <div>
+                                <label for="email">Correo electrónico:</label><br>
+                                <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" autocomplete="email">
+                            </div>
 
-                <!-- Campo 4: Fecha -->
-                <div>
-                    <label for="fecha_nac">Fecha de nacimiento:</label><br>
-                    <!-- <input type="date">: Selector interactivo de fechas -->
-                    <input type="date" id="fecha_nac" name="fecha_nac" required max="2008-12-31">
-                </div>
-                <br>
+                            <div>
+                                <label for="telefono">Número telefónico:</label><br>
+                                <input type="tel" id="telefono" name="telefono" value="+595" required pattern="^\+595[0-9]{9}$" placeholder="+595900123456" title="Debe comenzar con +595 seguido de 9 números" autocomplete="tel">
+                            </div>
 
-                <!-- Campo 5: Selección (Select) -->
-                <div>
-                    <label for="carrera">Carrera de interés:</label><br>
-                    <select id="carrera" name="carrera" required>
-                        <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="software">Tecnicatura en Desarrollo de Software</option>
-                        <option value="ciberseguridad">Licenciatura en Seguridad Informática</option>
-                        <option value="redes">Especialización en Redes y Sistemas Distribuidos</option>
-                    </select>
-                </div>
-                <br>
+                            <div>
+                                <label for="fecha_nac">Fecha de nacimiento:</label><br>
+                                <input type="date" id="fecha_nac" name="fecha_nac" required max="2008-12-31">
+                            </div>
 
-                <!-- Campo 6: Textarea, Comentarios adicionales -->
-                <div>
-                    <label for="comentarios">Comentarios o consultas adicionales:</label><br>
-                    <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escriba aquí sus dudas..."></textarea>
-                </div>
-                <br>
+                            <div>
+                                <label for="carrera">Carrera de interés:</label><br>
+                                <select id="carrera" name="carrera" required>
+                                    <option value="" disabled selected>Seleccione una opción</option>
+                                    <option value="Desarrollo de Software">Tecnicatura en Desarrollo de Software</option>
+                                    <option value="Seguridad Informática">Licenciatura en Seguridad Informática</option>
+                                    <option value="Redes y Sistemas">Especialización en Redes y Sistemas</option>
+                                </select>
+                            </div>
 
-                <!-- Botones de envío y reinicio del formulario -->
-                <div>
-                    <!-- <button type="submit"> o <input type="submit">: Envía los datos -->
-                    <button type="submit">Enviar Inscripción</button>
-                    <!-- <button type="reset">: Restablece el formulario a sus valores iniciales -->
-                    <button type="reset">Limpiar Campos</button>
-                </div>
+                            <div>
+                                <label for="comentarios">Comentarios o consultas adicionales:</label><br>
+                                <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escriba aquí sus dudas..."></textarea>
+                            </div>
 
-            </form>
-        </section>
+                            <div>
+                                <button type="submit">Siguiente: elegir asignaturas</button>
+                                <button type="reset" class="btn-secundario">Limpiar campos</button>
+                            </div>
+                        </form>
+                    </div>
 
-        <aside>
-            <h3>Requisitos de Admisión</h3>
-            <p>Recuerde adjuntar su cédula de identidad y certificado de estudios al momento de presentarse en secretaría.</p>
-        </aside>
+                    <!-- PASO 2: Asignaturas y turnos -->
+                    <div id="paso-2" hidden>
+                        <h3 tabindex="-1">Paso 2: Elija sus asignaturas</h3>
+                        <form id="form-asignaturas" action="#" method="POST">
+                            <div>
+                                <label for="sel-carrera">Carrera:</label><br>
+                                <select id="sel-carrera" name="carrera">
+                                    <option value="Desarrollo de Software">Tecnicatura en Desarrollo de Software</option>
+                                    <option value="Seguridad Informática">Licenciatura en Seguridad Informática</option>
+                                    <option value="Redes y Sistemas">Especialización en Redes y Sistemas</option>
+                                </select>
+                            </div>
+                            <p>Marque las asignaturas que desea cursar y elija el turno de cada una. Si cambia de carrera, la selección se reinicia.</p>
+
+                            <div class="tabla-contenedor">
+                                <table id="tabla-asignaturas">
+                                    <caption>Asignaturas disponibles para la carrera elegida</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Elegir</th>
+                                            <th scope="col">Asignatura</th>
+                                            <th scope="col">Turno</th>
+                                            <th scope="col">Horario</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Las filas se generan con JavaScript según la carrera -->
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3"><strong>Asignaturas seleccionadas:</strong></td>
+                                            <td><strong id="contador-asig">0</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <p id="error-paso-2" class="mensaje error" role="alert" hidden></p>
+
+                            <div>
+                                <button type="button" id="btn-atras" class="btn-secundario">Atrás</button>
+                                <button type="submit">Revisar inscripción</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- PASO 3: Revisión y confirmación -->
+                    <div id="paso-3" hidden>
+                        <h3 tabindex="-1">Paso 3: Revise y confirme</h3>
+                        <p>Su solicitud no se envía hasta que pulse "Confirmar inscripción".</p>
+
+                        <div class="revision">
+                            <article class="revision-tarjeta">
+                                <header class="revision-cabecera">
+                                    <span class="avatar" id="rev-inicial" aria-hidden="true"></span>
+                                    <div>
+                                        <p class="revision-nombre" id="rev-nombre"></p>
+                                        <span class="revision-carrera" id="rev-carrera"></span>
+                                    </div>
+                                </header>
+                                <dl class="datos-resumen">
+                                    <div><dt>Correo</dt><dd id="rev-email"></dd></div>
+                                    <div><dt>Teléfono</dt><dd id="rev-telefono"></dd></div>
+                                    <div><dt>Fecha de nacimiento</dt><dd id="rev-fecha"></dd></div>
+                                    <div><dt>Comentarios</dt><dd id="rev-comentarios"></dd></div>
+                                </dl>
+                            </article>
+
+                            <article class="revision-tarjeta">
+                                <h4>Asignaturas seleccionadas <span class="contador-pill" id="rev-total">0</span></h4>
+                                <div class="tabla-contenedor">
+                                    <table id="tabla-resumen">
+                                        <caption class="solo-lectores">Asignaturas seleccionadas para la inscripción</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Asignatura</th>
+                                                <th scope="col">Turno</th>
+                                                <th scope="col">Horario</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="acciones-revision">
+                            <button type="button" id="btn-confirmar">Confirmar inscripción</button>
+                            <button type="button" id="btn-editar-seleccion" class="btn-secundario">Editar</button>
+                            <button type="button" id="btn-cancelar-inscripcion" class="btn-peligro">Cancelar</button>
+                        </div>
+                    </div>
+
+                    <!-- Pantalla final: inscripción enviada, aparte muestra una tabla como resumen de los datos -->
+                    <div id="paso-exito" hidden>
+                        <div class="exito">
+                            <span class="exito-icono" aria-hidden="true">✓</span>
+                            <h3 tabindex="-1">¡Inscripción enviada!</h3>
+                            <p id="exito-texto"></p>
+                            <p class="codigo">Código de seguimiento: <strong id="exito-codigo"></strong></p>
+                            <div>
+                                <button type="button" id="btn-nueva">Hacer otra inscripción</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p id="mensaje-inscripcion" class="mensaje" role="status" hidden></p>
+                </section>
+            </div>
+
+            <aside class="tarjeta-seccion">
+                <h3>Requisitos de Admisión</h3>
+                <p>Recuerde adjuntar su cédula de identidad y certificado de estudios al momento de presentarse en secretaría.</p>
+                <p>¿Necesita ayuda económica? Puede postular a una beca con nosotros</a>.</p>
+            </aside>
+        </div>
     </main>
 
     <footer>

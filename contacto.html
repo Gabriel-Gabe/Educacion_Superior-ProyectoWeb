@@ -1,43 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
-    <!-- <head>: Contiene metadatos-->
 <head>
     <meta charset="UTF-8">
     <title>Contacto - Instituto Tecnológico Superior</title>
+    <link rel="stylesheet" href="css/estiloss.css">
+    <script src="js/script.js" defer></script>
 </head>
-<body>  <!-- <body>: Contiene lo que se va a mostrar en la web -->
+<body>
 
     <header>
-        <div> <!-- <div>: Contenedor genérico utilizado para agrupar elementos y organizar el código -->
+        <div>
             <h1>Instituto Tecnológico Superior</h1>
         </div>
-        <nav> <!-- <nav>: Sección destinada exclusivamente a enlaces de navegación principales -->
-            <ul> <!-- <ul>: Crea una lista no ordenada -->
-                <li><a href="index.html">Inicio</a></li>  <!-- elementos de la lista -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="inscripcion.html">Inscripción</a></li> <!-- Nuevo enlace agregado -->
+                <li><a href="inscripcion.html">Inscripción</a></li>
             </ul>
         </nav>
     </header>
 
-    <main><!-- <main>: Contenedor del contenido principal y único de la página (solo debe existir uno por página) -->
-        <section id="informacion-contacto"> <!-- <section>: Agrupa contenido temático relacionado dentro del documento (utiliza id) -->
-            <h2>Información de Contacto</h2> 
-            <p>Ponte en contacto con la administración central para consultas de admisión.</p>
-            
-            <p><strong>Dirección:</strong> Av. Universitaria 456, Campus Central</p>
-            <p><strong>Teléfono:</strong> +123 456 7890</p>
-            <p><strong>Correo electrónico:</strong> <a href="mailto:admision@institutosuperior.edu">admision@institutosuperior.edu</a></p>
-            
-            <img src="imagenes/imagen3.jpg" alt="Edificio central de atención al estudiante" width="400">
-        </section>
+    <main class="contenedor-principal">
+        <div class="grid-contenido">
+            <div>
+                <section id="informacion-contacto" class="tarjeta-seccion">
+                    <h2>Información de Contacto</h2>
+                    <p>Ponte en contacto con la administración central para consultas de admisión.</p>
+                    
+                    <p><strong>Dirección:</strong> Av. Universitaria 456, Campus Central</p>
+                    <p><strong>Teléfono:</strong> +595 21 456789</p>
+                    <p><strong>Correo electrónico:</strong> <a href="mailto:admision@institutosuperior.edu">admision@institutosuperior.edu</a></p>
+                    
+                    <img src="imagenes/imagen3.jpg" alt="Edificio central de atención" width="400">
+                </section>
 
-        <aside> <!-- <aside>: Contenido complementario o secundario tangencialmente relacionado con el contenido principal -->
-            <h3>Horarios de Atención</h3>
-            <p>Secretaría académica atiende de lunes a viernes de 08:00 a 19:00 hs.</p>
-        </aside>
+                <!-- FORMULARIO 2: Es el formulario de contacto -->
+                <section class="tarjeta-seccion">
+                    <h2>Envíenos su Consulta General</h2>
+                    <form action="#" method="POST">
+                        <div>
+                            <label for="con-nombre">Nombre completo:</label><br>
+                            <input type="text" id="con-nombre" name="nombre" required minlength="3" placeholder="Ej: María Gómez">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="con-email">Correo electrónico:</label><br>
+                            <input type="email" id="con-email" name="email" required placeholder="correo@ejemplo.com">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="con-telefono">Teléfono de contacto (+595...):</label><br>
+                            <input type="tel" id="con-telefono" name="telefono" value="+595" required pattern="^\+595[0-9]{9}$" placeholder="+595900123456" title="Debe comenzar con +595 seguido de 9 números">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="con-asunto">Asunto de la consulta:</label><br>
+                            <input type="text" id="con-asunto" name="asunto" required placeholder="Motivo de consulta">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="con-fecha">Fecha preferida de visita:</label><br>
+                            <!-- Se añadió required para evitar que se envíe vacío -->
+                            <input type="date" id="con-fecha" name="fecha" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="con-tipo">Tipo de interesado:</label><br>
+                            <select id="con-tipo" name="tipo">
+                                <option value="aspirante">Aspirante</option>
+                                <option value="padre">Padre / Tutor</option>
+                                <option value="empresa">Empresa / Convenio</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="con-mensaje">Mensaje:</label><br>
+                            <textarea id="con-mensaje" name="mensaje" rows="3" placeholder="Escriba su mensaje aquí..."></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <button type="submit">Enviar Mensaje</button>
+                            <button type="reset">Borrar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <aside class="tarjeta-seccion">
+                <h3>Horarios de Atención</h3>
+                <p>Secretaría académica atiende de lunes a viernes de 08:00 a 19:00 hs.</p>
+            </aside>
+        </div>
     </main>
 
     <footer>

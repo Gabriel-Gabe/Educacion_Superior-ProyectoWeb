@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Servicios - Instituto Tecnológico Superior</title>
+    <link rel="stylesheet" href="css/estiloss.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -16,112 +19,170 @@
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="inscripcion.html">Inscripción</a></li> <!-- Nuevo enlace agregado -->
+                <li><a href="inscripcion.html">Inscripción</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="oferta">
+    <main class="contenedor-principal">
+
+        <!-- 1. Presentación general -->
+        <section id="oferta" class="tarjeta-seccion">
             <h2>Servicios Académicos</h2>
-            <p>Conoce las carreras y herramientas que ofrecemos a nuestra comunidad.</p>
+            <p>Conoce las carreras, los horarios de clases y las herramientas que ofrecemos a nuestra comunidad.</p>
 
             <article>
-                <h3>Carrera de Ciberseguridad</h3>
-                <p>Formación integral en protección de datos, auditoría de sistemas e infraestructura segura.</p>
+                <h3>Carrera destacada: Seguridad Informática</h3>
+                <p>Formación integral en protección de datos y auditoría de sistemas.</p>
             </article>
-
-            <h3>Opciones Académicas</h3>
-            <ul>
-                <li>Tecnicatura en Desarrollo de Software</li>
-                <li>Licenciatura en Seguridad Informática</li>
-                <li>Especialización en Redes y Sistemas Distribuidos</li>
-            </ul>
-
-            <h3>Pasos para la Inscripción</h3>
-            <ol>
-                <li>Completar el formulario de preinscripción en línea.</li>
-                <li>Presentar la documentación en la secretaría del instituto.</li>
-                <li>Aprobar el curso de ingreso obligatorio.</li>
-            </ol>
         </section>
 
-        <!-- PARTE NUEVA: Tabla de horarios y asignaturas -->
-        <section id="horarios-clases">
-            <h2>Horarios y Carga Horaria por Asignatura</h2>
-            <p>A continuación se detalla la distribución de materias, turnos y estados actuales para el periodo lectivo:</p>
-
-            <!-- <table>: Define y contenedor principal de una tabla HTML -->
-            <table>
-                <!-- <caption>: Proporciona un título o descripción accesible a toda la tabla (debe ir inmediatamente después de <table>) -->
-                <caption>Cronograma de Clases y Estado Académico</caption>
-
-                <!-- <thead>: Agrupa las filas de encabezado de la tabla para estructurar los títulos de las columnas -->
-                <thead>
-                    <tr>
-                        <!-- <th>: Celda de encabezado (Table Header). El atributo scope="col" indica que el encabezado aplica para toda su columna (accesibilidad) -->
-                        <th scope="col">Asignatura</th>
-                        <th scope="col">Carrera</th>
-                        <th scope="col">Turno</th>
-                        <th scope="col">Estado</th>
-                    </tr>
-                </thead>
-
-                <!-- <tbody>: Agrupa el cuerpo principal con los registros o datos de la tabla -->
-                <tbody>
-                    <!-- <tr>: Define una fila (Table Row) dentro de la tabla -->
-                    <tr>
-                        <!-- <td>: Celda de datos (Table Data) con scope="row" porque esta primera columna identifica la fila -->
-                        <th scope="row">Arquitectura de Redes</th>
-                        <td>Seguridad Informática</td>
-                        <td>Mañana</td>
-                        <td>Activo</td> <!-- Estado -->
-                    </tr>
-                    <tr>
-                        <th scope="row">Programación Web Avanzada</th>
-                        <td>Desarrollo de Software</td>
-                        <td>Tarde</td>
-                        <td>Activo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Auditoría de Sistemas</th>
-                        <td>Seguridad Informática</td>
-                        <td>Noche</td>
-                        <td>Cupo Completo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Bases de NoSQL y SQL</th>
-                        <td>Desarrollo de Software</td>
-                        <td>Mañana</td>
-                        <td>Activo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Seguridad en Cloud Computing</th>
-                        <td>Especialización Redes</td>
-                        <td>Noche</td>
-                        <td>Próximamente</td>
-                    </tr>
-                </tbody>
-
-                <!-- <tfoot>: Agrupa la fila de pie de tabla, información de cierre -->
-                <tfoot>
-                    <tr>
-                        <!-- colspan="3": Atributo que permite combinar 3 celdas horizontales en una sola para ocupar más espacio -->
-                        <td colspan="3"><strong>Total de asignaturas agregadas en la nueva malla:</strong></td>
-                        <td><strong>5 asignaturas</strong></td>
-                    </tr>
-                </tfoot>
-            </table>
+        <!-- 2. Oferta académica general -->
+        <section class="tarjeta-seccion">
+            <h2>Carreras y Duración</h2>
+            <div class="tabla-contenedor">
+                <table>
+                    <caption>Listado oficial de carreras técnicas y grados</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Carrera</th>
+                            <th scope="col">Nivel</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Modalidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Desarrollo de Software</th>
+                            <td>Tecnicatura</td>
+                            <td>3 Años</td>
+                            <td>Presencial</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Seguridad Informática</th>
+                            <td>Licenciatura</td>
+                            <td>4 Años</td>
+                            <td>Híbrida</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Redes y Sistemas</th>
+                            <td>Especialización</td>
+                            <td>1 Año</td>
+                            <td>Virtual</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Administración de Base de Datos</th>
+                            <td>Tecnicatura</td>
+                            <td>3 Años</td>
+                            <td>Presencial</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Inteligencia Artificial Aplicada</th>
+                            <td>Diplomado</td>
+                            <td>6 Meses</td>
+                            <td>Virtual</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <section id="recursos">
-            <h2>Recursos Externos</h2>
-            <p>Para consultar el catálogo nacional de titulaciones oficiales, visita el sitio del <a href="https://www.mec.gov.py/cms/" target="_blank">Ministerio de Educación</a>.</p>
+        <!-- 3. Horarios: los filtros están DENTRO de la misma sección que la tabla que controlan -->
+        <section id="horarios-clases" class="tarjeta-seccion">
+            <h2>Horarios de Clases</h2>
+            <p>Encuentra tus asignaturas filtrando por carrera, turno o nombre.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-end; margin-bottom: 15px;">
+                <div>
+                    <label for="filtro-carrera"><strong>Carrera</strong></label><br>
+                    <select id="filtro-carrera" style="margin-top: 5px; padding: 8px; min-width: 220px;">
+                        <option value="todos">Todas las carreras</option>
+                        <option value="Seguridad Informática">Seguridad Informática</option>
+                        <option value="Desarrollo de Software">Desarrollo de Software</option>
+                        <option value="Redes y Sistemas">Redes y Sistemas</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="filtro-turno"><strong>Turno</strong></label><br>
+                    <select id="filtro-turno" style="margin-top: 5px; padding: 8px; min-width: 160px;">
+                        <option value="todos">Todos los turnos</option>
+                        <option value="Mañana">Mañana</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Noche">Noche</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="filtro-texto"><strong>Asignatura</strong></label><br>
+                    <input type="search" id="filtro-texto" placeholder="Ej: Redes"
+                           style="margin-top: 5px; padding: 8px; min-width: 200px;">
+                </div>
+
+                <div>
+                    <button type="button" id="btn-ordenar">Ordenar A-Z</button>
+                    <button type="button" id="btn-limpiar">Limpiar filtros</button>
+                </div>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table id="tabla-inscripciones">
+                    <caption>Cronograma de clases y horarios académicos</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Asignatura</th>
+                            <th scope="col">Carrera</th>
+                            <th scope="col">Turno</th>
+                            <th scope="col">Horario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-carrera="Seguridad Informática" data-turno="Mañana">
+                            <th scope="row">Arquitectura de Redes</th>
+                            <td>Seguridad Informática</td>
+                            <td>Mañana</td>
+                            <td>07:30 - 11:30 hs</td>
+                        </tr>
+                        <tr data-carrera="Desarrollo de Software" data-turno="Tarde">
+                            <th scope="row">Programación Web Avanzada</th>
+                            <td>Desarrollo de Software</td>
+                            <td>Tarde</td>
+                            <td>13:30 - 17:30 hs</td>
+                        </tr>
+                        <tr data-carrera="Seguridad Informática" data-turno="Noche">
+                            <th scope="row">Auditoría de Sistemas</th>
+                            <td>Seguridad Informática</td>
+                            <td>Noche</td>
+                            <td>18:00 - 21:30 hs</td>
+                        </tr>
+                        <tr data-carrera="Desarrollo de Software" data-turno="Mañana">
+                            <th scope="row">Bases de Datos NoSQL y SQL</th>
+                            <td>Desarrollo de Software</td>
+                            <td>Mañana</td>
+                            <td>08:00 - 12:00 hs</td>
+                        </tr>
+                        <tr data-carrera="Redes y Sistemas" data-turno="Noche">
+                            <th scope="row">Seguridad en Cloud Computing</th>
+                            <td>Redes y Sistemas</td>
+                            <td>Noche</td>
+                            <td>19:00 - 22:00 hs</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>Asignaturas mostradas:</strong></td>
+                            <td><strong id="total-registros">5</strong> de <span id="total-general">5</span></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <p id="sin-resultados" hidden>No hay asignaturas con esos filtros. Prueba con otra carrera o turno, o pulsa "Limpiar filtros".</p>
         </section>
 
-        <aside>
+        <aside class="tarjeta-seccion">
             <h3>Biblioteca Digital</h3>
-            <p>Recuerda que todos los estudiantes matriculados tienen acceso 24/7 a la biblioteca virtual.</p>
+            <p>Acceso 24/7 a la plataforma de recursos bibliográficos virtuales.</p>
         </aside>
     </main>
 
