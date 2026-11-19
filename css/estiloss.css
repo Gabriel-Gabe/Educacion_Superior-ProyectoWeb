@@ -33,6 +33,51 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.consejo-directivo {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+    align-items: center;
+    min-height: 130px;
+    width: 100vw;
+    margin: 0 0 0 calc(50% - 50vw);
+    overflow: hidden;
+    padding: 0;
+    border-radius: 0;
+    background-color: #17216b;
+}
+
+.consejo-contenido {
+    padding: 32px clamp(24px, 6vw, 72px);
+}
+
+.consejo-contenido h3 {
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+}
+
+.consejo-contenido p {
+    max-width: 480%;
+    margin: 0;
+    color: #ffffff;
+}
+
+.consejo-imagen {
+    align-self: stretch;
+    min-height: 230px;
+    clip-path: ellipse(180% 100% at 100% 50%);
+}
+
+.consejo-imagen img {
+    display: block;
+    width: 90%;
+    height: 100%;
+    min-height: 230px;
+    object-fit: cover;
+}
+
 /* 5. Selector descendiente */
 header nav ul li a {
     color: #ffffff;
@@ -51,43 +96,721 @@ h1, h2, h3 {
    ESTILOS DE ENCABEZADO, NAVEGACIÓN Y FONDOS
    ========================================================== */
 header {
-    background-color: #1e293b;
-    color: #ffffff;
-    padding: 20px;
-    /* Sección con imagen de fondo definida (posición, tamaño y repetición) */
-    background-image: url('../imagenes/fondo-header.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 12px clamp(24px, 10vw, 156px);
+    background-color: #ffffff;
+    color: #17216b;
+    box-sizing: border-box;
+    box-shadow: 0 2px 12px rgba(23, 33, 107, 0.08);
 }
 
-/* Título de la universidad en el encabezado (blanco para contrastar con el fondo oscuro) */
+/* Nombre de la institución a la izquierda del encabezado */
+.encabezado-institucional {
+    order: 1;
+    min-width: max-content;
+}
+
 header h1 {
-    color: #ffffff;
-    font-family: 'Georgia', serif;
-    margin: 0 0 10px;
-    font-size: 1.9rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 header p {
-    margin: 0 0 10px;
-    color: #cbd5e1;
+    margin: 2px 0 0;
+    color: #64748b;
+    font-size: 0.8rem;
 }
 
-/* Diseño con Flexbox para el menú de navegación */
-nav ul {
+/* Menú horizontal alineado a la derecha */
+header nav {
+    order: 2;
+    flex: 1;
+}
+
+header nav ul {
     display: flex;
     list-style-type: none; /* Personalización de listas */
+    align-items: center;
+    justify-content: center;
     padding: 0;
-    gap: 15px;
+    margin: 0;
+    gap: 28px;
+}
+
+header nav ul li a {
+    color: #17216b;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Acciones destacadas del encabezado */
+.acciones-header {
+    order: 3;
+    margin-left: auto;
+}
+
+.acciones-header ul {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.acciones-header a {
+    display: inline-block;
+    padding: 9px 20px;
+    border: 1px solid #63aaf3;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.acciones-header ul li:first-child a {
+    background-color: #63aaf3;
+    color: #17216b;
+}
+
+.acciones-header ul li:last-child a {
+    background-color: #ffffff;
+    color: #17216b;
 }
 
 /* Efecto hover en enlaces */
-nav a:hover {
-    color: #38bdf8;
-    text-decoration: underline;
+header nav a:hover {
+    color: #63aaf3;
+    text-decoration: none;
+}
+
+.acciones-header ul li:first-child a:hover {
+    background-color: #4f9be5;
+    color: #17216b;
+}
+
+.acciones-header ul li:last-child a:hover {
+    background-color: #eef7ff;
+    color: #17216b;
+}
+
+/* Sección principal de presentación */
+.hero-inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    min-height: 430px;
+    background-color: #15124f;
+    overflow: hidden;
+}
+
+.hero-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 64px clamp(24px, 10vw, 156px);
+    color: #ffffff;
+}
+
+.hero-contenido h2 {
+    max-width: 520px;
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.12;
+}
+
+.hero-contenido p {
+    max-width: 480px;
+    margin: 0 0 28px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.hero-boton {
+    display: inline-block;
+    padding: 11px 22px;
+    border-radius: 999px;
+    background-color: #63aaf3;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hero-boton:hover {
+    background-color: #8bc4f8;
+    color: #ffffff;
+}
+
+.hero-imagen {
+    min-height: 430px;
+    clip-path: ellipse(120% 150% at 120% 0%);
+}
+
+.hero-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+}
+
+/* Presentación institucional de la página Nosotros */
+.nosotros-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    min-height: 430px;
+    overflow: hidden;
+    background-color: #15124f;
+}
+
+.nosotros-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px clamp(24px, 10vw, 156px);
+    color: #ffffff;
+}
+
+.nosotros-contenido .seccion-etiqueta {
+    margin-bottom: 18px;
+    color: #b9d8f5;
+}
+
+.nosotros-contenido h2 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.nosotros-contenido > p:last-child {
+    max-width: 470px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.nosotros-imagen {
+    min-height: 430px;
+    clip-path: ellipse(120% 150% at 120% 0%);
+}
+
+.nosotros-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+}
+
+/* Composición de la historia institucional */
+.historia-institucional {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+    gap: 0;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 0;
+    background-color: #f3f8ff;
+}
+
+.historia-imagen {
+    min-height: 520px;
+}
+
+.historia-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+.historia-contenido {
+    min-width: 0;
+    padding: 52px 42px;
+}
+
+.historia-contenido h2 {
+    margin: 0 0 28px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+}
+
+.historia-contenido .tabla-contenedor {
+    overflow-x: auto;
+    background-color: transparent;
+}
+
+.historia-institucional .historia-contenido table {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    table-layout: fixed;
+}
+
+.historia-institucional .historia-contenido th,
+.historia-institucional .historia-contenido td {
+    overflow-wrap: anywhere;
+}
+
+.historia-institucional .historia-contenido th:first-child,
+.historia-institucional .historia-contenido td:first-child {
+    width: 13%;
+}
+
+.historia-institucional .historia-contenido th:nth-child(2),
+.historia-institucional .historia-contenido td:nth-child(2) {
+    width: 55%;
+}
+
+.historia-institucional .historia-contenido th:last-child,
+.historia-institucional .historia-contenido td:last-child {
+    width: 32%;
+}
+
+/* Presentación institucional debajo del hero */
+.seccion-presentacion {
+    padding: 82px 24px 96px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.seccion-etiqueta {
+    margin: 0 0 22px;
+    color: #17216b;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.seccion-presentacion h2 {
+    max-width: 760px;
+    margin: 0 auto 34px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.28;
+}
+
+.seccion-presentacion h2 span {
+    color: #a56dcc;
+}
+
+.presentacion-boton {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid #63aaf3;
+    border-radius: 999px;
+    color: #17216b;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.presentacion-boton:hover {
+    background-color: #eef7ff;
+}
+
+/* Presentación de la propuesta educativa */
+.oferta-presentacion {
+    padding: 82px 24px 96px;
+    text-align: center;
+}
+
+.oferta-presentacion .seccion-etiqueta {
+    margin: 0 0 22px;
+    color: #17216b;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.oferta-presentacion h2 {
+    max-width: 860px;
+    margin: 0 auto;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3.2vw, 1.8rem);
+    font-weight: 400;
+    line-height: 1.28;
+}
+
+/* Secciones académicas de la página Servicios */
+.servicios-seccion {
+    margin-top: 32px;
+}
+
+.servicios-seccion > p {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    color: #5964a3;
+    text-align: center;
+}
+
+.servicios-horarios > p {
+    margin-bottom: 26px;
+}
+
+.servicios-filtros {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) minmax(140px, 0.75fr) minmax(180px, 1fr) auto;
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 28px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #f3f8ff;
+}
+
+.servicios-filtros > div {
+    margin: 0;
+}
+
+.servicios-filtros label {
+    color: #17216b;
+    font-size: 0.85rem;
+}
+
+.servicios-filtros select,
+.servicios-filtros input {
+    width: 100%;
+    max-width: none;
+    margin-top: 7px;
+    border: 1px solid #b9d8f5;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.servicios-filtros-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.servicios-filtros-acciones button {
+    white-space: nowrap;
+}
+
+.servicios-aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 32px;
+    padding: 42px clamp(24px, 6vw, 72px);
+    border: 0;
+    border-radius: 48px 48px 0 0;
+    background-color: #15124f;
+    color: #ffffff;
+}
+
+.servicios-aside h3 {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 400;
+}
+
+.servicios-aside p {
+    margin: 0;
+    color: #ffffff;
+}
+
+/* Tarjetas visuales para las novedades */
+.novedades-seccion {
+    padding: 28px 0 24px;
+}
+
+.novedades-seccion > h2 {
+    margin: 0 0 28px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+    text-align: center;
+}
+
+.novedades-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+}
+
+.novedad-card {
+    position: relative;
+    min-height: 710px;
+    overflow: hidden;
+    border-radius: 28px;
+    background-color: #15124f;
+}
+
+.novedad-imagen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 68%;
+}
+
+.novedad-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.novedad-contenido {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    min-height: 20%;
+    padding: 78px 34px 30px;
+    border-radius: 50% 50% 0 0 / 10% 10% 0 0;
+    background-color: #15124f;
+    color: #ffffff;
+}
+
+.novedad-contenido h3 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.45rem;
+}
+
+.novedad-contenido p {
+    max-width: 470px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+/* Panel de logros con apariencia de sección destacada */
+.logros-institucionales,
+.tabla-institucional {
+    margin-top: 32px;
+    padding: 64px 32px 72px;
+    border-radius: 72px 72px 96px 96px;
+    background-color: #f3f8ff;
+    text-align: center;
+}
+
+.logros-institucionales h2,
+.tabla-institucional h2 {
+    margin: 0 0 10px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+}
+
+.logros-descripcion {
+    margin: 0 0 30px;
+    color: #5964a3;
+    font-size: 0.95rem;
+}
+
+.logros-institucionales .tabla-contenedor,
+.tabla-institucional .tabla-contenedor {
+    overflow-x: auto;
+    padding: 0 4px 8px;
+}
+
+.logros-institucionales table,
+.tabla-institucional table {
+    min-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 14px 30px rgba(67, 91, 150, 0.1);
+}
+
+.logros-institucionales caption,
+.tabla-institucional caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.logros-institucionales th,
+.logros-institucionales td,
+.tabla-institucional th,
+.tabla-institucional td {
+    border: 0;
+    border-bottom: 1px solid #edf2fb;
+    padding: 16px 18px;
+    color: #303b83;
+    text-align: left;
+}
+
+.logros-institucionales thead th,
+.tabla-institucional thead th {
+    background-color: #e8f2ff;
+    color: #17216b;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+}
+
+.logros-institucionales tbody th,
+.tabla-institucional tbody th {
+    font-weight: 600;
+}
+
+.logros-institucionales tbody tr:last-child th,
+.logros-institucionales tbody tr:last-child td,
+.logros-institucionales tfoot td,
+.tabla-institucional tbody tr:last-child th,
+.tabla-institucional tbody tr:last-child td,
+.tabla-institucional tfoot td {
+    border-bottom: 0;
+}
+
+.logros-institucionales tfoot td,
+.tabla-institucional tfoot td {
+    background-color: #f8fbff;
+    font-size: 0.9rem;
+}
+
+/* El contenido del inicio se muestra en una sola columna */
+.inicio-contenedor {
+    max-width: 1280px;
+}
+
+.inicio-contenedor .grid-contenido {
+    grid-template-columns: 1fr;
+}
+
+.contacto-hero {
+    display: grid;
+    min-height: 390px;
+    place-items: center;
+    background-image: linear-gradient(rgba(243, 248, 255, 0.72), rgba(243, 248, 255, 0.72)), url('../imagenes/imagen3.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.contacto-hero h1 {
+    margin: 0;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 400;
+}
+
+.contacto-hero p {
+    margin: 18px 0 0;
+    color: #5964a3;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.45em;
+}
+
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.7fr);
+    gap: clamp(40px, 8vw, 120px);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 82px 24px 96px;
+}
+
+.contacto-pagina .tarjeta-seccion {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.contacto-formulario {
+    order: 1;
+}
+
+.contacto-detalles {
+    order: 2;
+}
+
+.contacto-formulario h2,
+.contacto-detalles h2 {
+    margin-bottom: 28px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.contacto-detalles {
+    padding: 32px;
+    border-radius: 16px;
+    background-color: #f3f8ff;
+    color: #303b83;
+}
+
+.contacto-detalles h2 {
+    color: #17216b;
+}
+
+.contacto-pagina form {
+    max-width: none;
+    margin: 0;
+}
+
+.contacto-pagina form div {
+    margin-bottom: 18px;
+}
+
+.contacto-pagina form br {
+    display: none;
+}
+
+.contacto-pagina form input,
+.contacto-pagina form select,
+.contacto-pagina form textarea {
+    width: 100%;
+    max-width: none;
+    margin-top: 7px;
+    border: 1px solid #b9d8f5;
+    border-radius: 6px;
+    background-color: #f3f8ff;
+}
+
+.contacto-pagina form textarea {
+    resize: vertical;
+}
+
+.contacto-formulario-acciones {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
 }
 
 /* ==========================================================
@@ -164,13 +887,66 @@ button:focus {
 
 /* Media Query para ajustar la distribución en pantallas angostas (móviles) */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 16px 24px;
+    }
+
+    .encabezado-institucional {
+        order: 1;
+    }
+
+    header nav {
+        order: 2;
+        flex: none;
+    }
+
+    .acciones-header {
+        order: 3;
+        margin-left: 0;
+    }
+
     .grid-contenido {
         grid-template-columns: 1fr; /* Cambia a una sola columna */
     }
     
-    nav ul {
+    header nav ul {
         flex-direction: column; /* Menú en columna para móviles */
+        align-items: flex-start;
         gap: 5px;
+    }
+
+    .acciones-header ul {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero-inicio {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-contenido {
+        padding: 52px 24px;
+    }
+
+    .hero-imagen {
+        min-height: 280px;
+        clip-path: none;
+    }
+
+    .hero-imagen img {
+        min-height: 280px;
+    }
+
+    .novedades-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .novedad-card {
+        min-height: 420px;
     }
 }
 
@@ -280,6 +1056,89 @@ legend {
 /* ==========================================================
    ESTILO UTILIZADO PARA LA INSCRIPCIÓN FORMULARIO
    ========================================================== */
+
+.inscripcion-pagina {
+    max-width: 1280px;
+    padding-top: 48px;
+    padding-bottom: 64px;
+}
+
+.inscripcion-pagina .grid-contenido {
+    grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.85fr);
+    gap: 36px;
+    align-items: start;
+}
+
+.inscripcion-formulario {
+    padding: clamp(26px, 4vw, 48px);
+    border-radius: 28px;
+    background-color: #eef7ff;
+    box-shadow: 0 12px 30px rgba(67, 91, 150, 0.1);
+}
+
+.inscripcion-formulario > h2 {
+    margin-bottom: 14px;
+    color: #17216b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+}
+
+.inscripcion-formulario > p {
+    margin-bottom: 28px;
+    color: #5964a3;
+}
+
+.inscripcion-formulario form label {
+    color: #17216b;
+    font-weight: 600;
+}
+
+.inscripcion-formulario form input:not([type="checkbox"]):not([type="radio"]),
+.inscripcion-formulario form select,
+.inscripcion-formulario form textarea {
+    width: 100%;
+    max-width: none;
+    margin-top: 7px;
+    border: 1px solid #b9d8f5;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.inscripcion-formulario form textarea {
+    resize: vertical;
+}
+
+.inscripcion-formulario form button {
+    margin: 4px 6px 4px 0;
+}
+
+.inscripcion-aside {
+    position: sticky;
+    top: 100px;
+    padding: 34px 30px;
+    border: 0;
+    border-radius: 28px;
+    background-color: #15124f;
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(67, 91, 150, 0.1);
+}
+
+.inscripcion-aside h3 {
+    margin-bottom: 18px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.inscripcion-aside p {
+    color: #ffffff;
+}
+
+.inscripcion-aside p:last-child {
+    margin-bottom: 0;
+}
 
 /* Indicador de progreso */
 .pasos {
@@ -541,4 +1400,193 @@ legend {
     border: 1px dashed #16a34a;
     border-radius: 6px;
     background-color: #ffffff;
+}
+
+/* Pie de página compacto con estructura institucional */
+footer {
+    margin-top: 40px;
+    padding: 42px clamp(24px, 10vw, 156px) 18px;
+    border-radius: 48px 48px 0 0;
+    background-color: #15124f;
+    color: #ffffff;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 0.8fr;
+    align-items: start;
+    gap: 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.footer-marca strong {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.footer-marca p,
+.footer-redes p {
+    margin: 8px 0 0;
+    color: #c9d4f4;
+    font-size: 0.85rem;
+}
+
+.footer-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 24px;
+    padding-top: 4px;
+}
+
+.footer-enlaces a {
+    color: #ffffff;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.footer-enlaces a:hover {
+    color: #63aaf3;
+}
+
+.footer-redes {
+    text-align: right;
+}
+
+.footer-redes p {
+    margin: 0 0 10px;
+}
+
+.footer-redes a {
+    display: inline-grid;
+    width: 30px;
+    height: 30px;
+    margin-left: 6px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #63aaf3;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-inferior {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px 24px;
+    max-width: 1280px;
+    margin: 34px auto 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(201, 212, 244, 0.22);
+    color: #9da9d1;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer-enlaces {
+        justify-content: flex-start;
+    }
+
+    .footer-redes {
+        text-align: left;
+    }
+
+    .footer-redes a {
+        margin-right: 6px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacto-hero {
+        min-height: 280px;
+    }
+
+    .contacto-hero p {
+        letter-spacing: 0.25em;
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+        gap: 52px;
+        padding: 56px 24px 72px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .nosotros-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-contenido {
+        padding: 52px 24px;
+    }
+
+    .nosotros-imagen {
+        min-height: 280px;
+        clip-path: none;
+    }
+
+    .nosotros-imagen img {
+        min-height: 280px;
+    }
+
+    .historia-institucional {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-imagen,
+    .historia-imagen img {
+        min-height: 280px;
+    }
+
+    .historia-contenido {
+        padding: 36px 24px;
+    }
+
+    .consejo-directivo {
+        grid-template-columns: 1fr;
+    }
+
+    .consejo-imagen {
+        min-height: 200px;
+        clip-path: none;
+    }
+
+    .consejo-imagen img {
+        min-height: 200px;
+    }
+
+    .servicios-filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .servicios-filtros-acciones {
+        justify-content: flex-start;
+    }
+
+    .servicios-aside {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        border-radius: 32px 32px 0 0;
+    }
+
+    .inscripcion-pagina {
+        padding-top: 32px;
+    }
+
+    .inscripcion-aside {
+        position: static;
+    }
 }
